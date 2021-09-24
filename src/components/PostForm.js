@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addPosts, getPosts } from "../actions/post.action";
+import { addPost, getPosts } from "../actions/post.action";
 
 const PostForm = () => {
   const [title, setTitle] = useState('')
@@ -19,7 +19,7 @@ const handleForm = async (e) => {
       likes: 0,
     };
 
-    await dispatch(addPosts(data))
+    await dispatch(addPost(data))
     setTitle("")
     setContent("")
     dispatch(getPosts())
